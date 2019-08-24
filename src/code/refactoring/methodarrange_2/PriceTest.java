@@ -12,13 +12,13 @@ public class PriceTest {
 	}
 
 	@Test
-	public void testGetPriceUpcase() {
+	public void testGetPrice_Upcase() {
 		Price price = new Price(10, 500);
 		assertTrue(price.getPrice() == 5000*0.95);
 	}
 	
 	@Test
-	public void testGetPriceDowncase() {
+	public void testGetPrice_Downcase() {
 		Price price = new Price(10, 50);
 		assertTrue(price.getPrice() == 500*0.98);
 	}
