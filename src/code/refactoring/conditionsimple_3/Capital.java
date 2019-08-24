@@ -9,6 +9,8 @@ public class Capital {
 
 	public Capital () {}
 	
+	/*
+	//as-is
 	public double getAdjustedCapital(double _income) {
 		double result = 0.0;
 		if (_capital > 0.0) {
@@ -19,7 +21,24 @@ public class Capital {
 		
 		return result;
 	}
+	*/
 	
 	
+	//to-be : 감시절 if 문
+	public double getAdjustedCapital(double _income) {
+		double result = 0.0;
+		
+		if (_capital <= 0.0) {
+			return result;
+		}
+		if (_intRate <= 0.0 || _duration <= 0.0) {
+			return result;
+		}
+		return getOutRslt(_income);
+	}
+
+	private double getOutRslt(double _income) {
+		return (_income / _duration) * ADJ_FACTOR;
+	}
 
 }
