@@ -7,25 +7,6 @@ public class Distance {
 	private int _mass = 3; 
 	private int _delay = 1;
 	
-	/*
-	//as-is
-	public double getDistanceTravelled (int time) {
-		
-		double result;
-		double acc = _primaryForce / _mass;
-		int primaryTime = Math.min(time, _delay);
-		result = 0.5 * acc * primaryTime * primaryTime;
-		
-		int secondaryTime = time - _delay;
-		if (secondaryTime > 0) {
-			double primaryVel = acc * _delay;
-			acc = (_primaryForce + _secondaryForce) / _mass;
-			result += primaryVel * secondaryTime + 0.5 * acc * secondaryTime * secondaryTime;
-		}
-		return result;
-	}
-	*/
-	
 	//to-be
 	// 매서드 정리 : 하나의 변수에 여러개의 용도로 사용하지 마라
 	public double getDistanceTravelled (int time) {
@@ -49,5 +30,24 @@ public class Distance {
 		return result;
 	}	
 	
+	/*
+	//as-is
+	public double getDistanceTravelled (int time) {
+		
+		double result;
+		double acc = _primaryForce / _mass;
+		int primaryTime = Math.min(time, _delay);
+		result = 0.5 * acc * primaryTime * primaryTime;
+		
+		int secondaryTime = time - _delay;
+		if (secondaryTime > 0) {
+			double primaryVel = acc * _delay;
+			acc = (_primaryForce + _secondaryForce) / _mass;
+			result += primaryVel * secondaryTime + 0.5 * acc * secondaryTime * secondaryTime;
+		}
+		return result;
+	}
+	 */
 	
 }
+
