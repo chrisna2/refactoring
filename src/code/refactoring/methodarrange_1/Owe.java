@@ -57,7 +57,6 @@ public class Owe {
 		System.out.println("name: " + _name);
 	    System.out.println("amount: " + outstanding);
 	}
-
 	
 	/* 
 	//as-is
