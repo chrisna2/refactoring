@@ -16,7 +16,8 @@ package code.refactoring.complex_1;
  *
  */
 public class GeneratePrimes {
-	
+	/*
+	//as-is
 	public int getPrimes(int maxValue) {
 		
 		int primesCount=0;
@@ -43,7 +44,6 @@ public class GeneratePrimes {
 			}
 			
 			//소스 개수는?
-
 			for (i=0; i<crossedOut.length; i++) {
 				if (crossedOut[i]) {
 					primesCount++; //카운트 증가
@@ -52,11 +52,15 @@ public class GeneratePrimes {
 			
 			int[] primes = new int[primesCount];
 			
+			
+			
 			//소수를 결과 배열로 이동한다.
 			for(i=0, j=0; i<crossedOut.length; i++) {
 				if (crossedOut[i])	// 소수일경우에
 					primes[j++] = i;
 			}
+			
+			
 			System.out.println("primes 수는 " + primes.length + "개 입니다.");
 		}
 		else	// maxValue < 2
@@ -64,5 +68,73 @@ public class GeneratePrimes {
 		
 		return primesCount;
 	}
+	*/
+	
+	private boolean[] crossedOut;
+	int[] primesCnt;
+	
+	public int getPrimes(int maxValue) {
+		
+		int primesCount=0;
+		
+		if (maxValue >= 2) { //유일하게 유효한 경우
+			
+			// 이 부분은 3줄로 바꿀것!
+			// 배열을 참으로 초가회
+			initArray(maxValue);
+			primesCount = checkPrime();
+			putParamRslt();
+			
+			System.out.println("primes 수는 " + primesCnt.length + "개 입니다.");
+		}
+		else	
+		    System.out.println("primes 수는 0 개 입니다.");
+		
+		return primesCount;
+	}
 
+	private void putParamRslt() {
+		int i;
+		int j;
+		//소수를 결과 배열로 이동한다.
+		for(i=0, j=0; i<crossedOut.length; i++) {
+			if (crossedOut[i])	// 소수일경우에
+				primesCnt[j++] = i;
+		}
+	}
+
+	private int checkPrime() {
+		int i;
+		int primesCount = 0;
+		//소스 개수는?
+		for (i=0; i<crossedOut.length; i++) {
+			if (crossedOut[i]) {
+				primesCount++; //카운트 증가
+			}
+		}
+		primesCnt = new int[primesCount];
+		
+		return primesCount;
+	}
+
+	private void initArray(int maxValue) {
+		
+		int i;
+		int j;
+
+		crossedOut = new boolean[maxValue + 1];
+		
+		for (i=0; i<crossedOut.length; i++) 
+		    crossedOut[i] = true;
+		// 소수가 아닌 알려진 숫자를 제거
+		crossedOut[0] = crossedOut[1]= false;
+		
+		for(i=2; i<Math.sqrt(crossedOut.length)+1; i++) {
+			if(crossedOut[i]) {	// i가 남아있는 숫자라면 이 숫자의 배수를 구한다.
+				for (j=2*i; j<crossedOut.length; j+=i) {
+				    crossedOut[j] = false; // 배수는 소수가 아니다.
+				}
+			}
+		}
+	}
 }
