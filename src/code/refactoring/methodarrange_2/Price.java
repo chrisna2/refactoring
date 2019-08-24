@@ -11,6 +11,7 @@ public class Price {
 	}
 	
 	// TO-BE (instructor)
+	
 	//쓸데 없는 지역 변수는 지양하는 것이 좋다.
 	public double getPrice() {
 		return discountFactor()*basePrice();
