@@ -3,12 +3,20 @@ package code.refactoring.methodsimple_2;
 public class Employee {
 
 	private double salary=100;
+
+	//to-be : 각각에 메서드로 분리되어 합친다음 고정된 값을 직접 입력하도록 하여 유연성을 높여라
+	public void percentRaise(double factor) {
+		salary = salary * (1+factor);
+		System.out.println("PercentRaise --> " + salary );
+	}
 	
+	//as-is
 	void tenPercentRaise () {
 		salary *= 1.1;
 		System.out.println("tenPercentRaise --> " + salary );
 	}
-
+	
+	//as-is
 	void fivePercentRaise () {
 		salary *= 1.05;
 		System.out.println("fivePercentRaise --> " + salary );

@@ -4,8 +4,12 @@ public class EmployeeTest {
 	
 	public static void main(String[] args) { 
 		Employee kim=new Employee();
-		kim.tenPercentRaise();
-		kim.fivePercentRaise();
+		
+		kim.percentRaise((double)0.15);
+		
+		//kim.tenPercentRaise();
+		//kim.fivePercentRaise();
+		
 		kim.baseCharge();
 		
 	}
