@@ -16,63 +16,11 @@ package code.refactoring.complex_1;
  *
  */
 public class GeneratePrimes {
-	/*
-	//as-is
-	public int getPrimes(int maxValue) {
-		
-		int primesCount=0;
-	    		
-		if (maxValue >= 2) { //유일하게 유효한 경우
-			// 선언
-			boolean[] crossedOut = new boolean[maxValue + 1];
-			int i;
-			
-			// 배열을 참으로 초가회
-			for (i=0; i<crossedOut.length; i++) 
-			    crossedOut[i] = true;
-			// 소수가 아닌 알려진 숫자를 제거
-			crossedOut[0] = crossedOut[1]= false;
-			
-			int j;
-			
-			for(i=2; i<Math.sqrt(crossedOut.length)+1; i++) {
-				if(crossedOut[i]) {	// i가 남아있는 숫자라면 이 숫자의 배수를 구한다.
-					for (j=2*i; j<crossedOut.length; j+=i) {
-					    crossedOut[j] = false; // 배수는 소수가 아니다.
-					}
-				}
-			}
-			
-			//소스 개수는?
-			for (i=0; i<crossedOut.length; i++) {
-				if (crossedOut[i]) {
-					primesCount++; //카운트 증가
-				}
-			}
-			
-			int[] primes = new int[primesCount];
-			
-			
-			
-			//소수를 결과 배열로 이동한다.
-			for(i=0, j=0; i<crossedOut.length; i++) {
-				if (crossedOut[i])	// 소수일경우에
-					primes[j++] = i;
-			}
-			
-			
-			System.out.println("primes 수는 " + primes.length + "개 입니다.");
-		}
-		else	// maxValue < 2
-		    System.out.println("primes 수는 0 개 입니다.");
-		
-		return primesCount;
-	}
-	*/
 	
 	private boolean[] crossedOut;
 	int[] primesCnt;
 	
+	//메인 로직
 	public int getPrimes(int maxValue) {
 		
 		int primesCount=0;
@@ -80,7 +28,6 @@ public class GeneratePrimes {
 		if (maxValue >= 2) { //유일하게 유효한 경우
 			
 			// 이 부분은 3줄로 바꿀것!
-			// 배열을 참으로 초가회
 			initArray(maxValue);
 			primesCount = checkPrime();
 			putParamRslt();
@@ -137,4 +84,60 @@ public class GeneratePrimes {
 			}
 		}
 	}
+	
+	
+	/*
+	//as-is
+	public int getPrimes(int maxValue) {
+		
+		int primesCount=0;
+	    		
+		if (maxValue >= 2) { //유일하게 유효한 경우
+			// 선언
+			boolean[] crossedOut = new boolean[maxValue + 1];
+			int i;
+			
+			// 배열을 참으로 초가회
+			for (i=0; i<crossedOut.length; i++) 
+			    crossedOut[i] = true;
+			// 소수가 아닌 알려진 숫자를 제거
+			crossedOut[0] = crossedOut[1]= false;
+			
+			int j;
+			
+			for(i=2; i<Math.sqrt(crossedOut.length)+1; i++) {
+				if(crossedOut[i]) {	// i가 남아있는 숫자라면 이 숫자의 배수를 구한다.
+					for (j=2*i; j<crossedOut.length; j+=i) {
+					    crossedOut[j] = false; // 배수는 소수가 아니다.
+					}
+				}
+			}
+			
+			//소스 개수는?
+			for (i=0; i<crossedOut.length; i++) {
+				if (crossedOut[i]) {
+					primesCount++; //카운트 증가
+				}
+			}
+			
+			int[] primes = new int[primesCount];
+			
+			
+			
+			//소수를 결과 배열로 이동한다.
+			for(i=0, j=0; i<crossedOut.length; i++) {
+				if (crossedOut[i])	// 소수일경우에
+					primes[j++] = i;
+			}
+			
+			
+			System.out.println("primes 수는 " + primes.length + "개 입니다.");
+		}
+		else	// maxValue < 2
+		    System.out.println("primes 수는 0 개 입니다.");
+		
+		return primesCount;
+	}
+	*/
+	
 }
