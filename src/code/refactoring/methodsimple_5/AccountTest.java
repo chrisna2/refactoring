@@ -12,7 +12,7 @@ public class AccountTest {
 		Date startDate = new Date(2016, 1, 1);  
 		Date endDate = new Date(2016, 1, 5);   
 		Account anAccount = new  Account();
-		double flow = anAccount.getFlowBetween(startDate, endDate);
+		double flow = anAccount.getFlowBetween(new DateRange(startDate, endDate));
 		System.out.println(flow);
 }
 
