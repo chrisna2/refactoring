@@ -10,6 +10,26 @@ public class Price {
 		this._itemPrice = itemPrice;
 	}
 	
+	// TO-BE (instructor)
+	//쓸데 없는 지역 변수는 지양하는 것이 좋다.
+	public double getPrice() {
+		return discountFactor()*basePrice();
+	}
+	
+
+	private int basePrice() {
+		return _quantity * _itemPrice;
+	}
+
+	private double discountFactor() {
+		if(basePrice() > 1000) {
+			return 0.95;
+		}
+		else {
+			return 0.98;
+		}
+	}
+	
 	/* 
 	//AS-IS
 	public double getPrice() {
@@ -42,27 +62,5 @@ public class Price {
 			return basePrice * 0.98;
 		}
 	}*/
-	
-	// TO-BE (instructor)
-	//쓸데 없는 지역 변수는 지양하는 것이 좋다.
-	public double getPrice() {
-		return discountFactor()*basePrice();
-	}
-	
-
-	private int basePrice() {
-		return _quantity * _itemPrice;
-	}
-
-	private double discountFactor() {
-		if(basePrice() > 1000) {
-			return 0.95;
-		}
-		else {
-			return 0.98;
-		}
-	}
-	
-	
 	
 }
