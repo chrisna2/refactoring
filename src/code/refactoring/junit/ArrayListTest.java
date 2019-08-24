@@ -12,9 +12,11 @@ public class ArrayListTest {
 
 	@Before
 	public void setUp() throws Exception {
-        for (int i=0; i<3; i++)
+        for (int i=0; i<3; i++) {
             arrayList.add("" + i);
+        }
 	}
+	// 기본 적으로 위에 설정된 값은 메서드별로 초기화 되어 개별적으로 적용된다.
 
 	@Test
     public void testAdd() {
@@ -26,19 +28,31 @@ public class ArrayListTest {
 	
 	@Test
     public void testSet() {
-        fail("Not yet implemented");
+        assertEquals(arrayList.size(), 3);
+        arrayList.set(1, "Set");
+        assertEquals(arrayList.size(), 3);
+        assertEquals(arrayList.get(1), "Set");		
     }
     
 	@Test
     public void testRemove() {
-        fail("Not yet implemented");
+        assertEquals(arrayList.size(), 3);
+        arrayList.remove(1);
+        assertEquals(arrayList.size(), 2);
+        
+        String[] strs = {"0","2"};
+        
+        compare(arrayList, strs);
     }
 	
 	@Test
     public void testAddAll() {
-        fail("Not yet implemented");
+        assertEquals(arrayList.size(), 3);
+        arrayList.addAll(arrayList);
+        assertEquals(arrayList.size(), 6);
     }
     
+	//자체적으로 테스트 케이스 안에서 사용하는 메서드는 다음과 같이 설정 가능 하다.
     @SuppressWarnings("unused")
 	private void compare(ArrayList<String> lst, String[] strs) {
         Object[] array = lst.toArray();
