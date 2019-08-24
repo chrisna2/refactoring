@@ -1,0 +1,26 @@
+package code.refactoring.complex_3;
+
+public class Movie {
+	public static final int CHILDERNS = 2;
+	public static final int REQULAR = 0;
+	public static final int NEW_RELEASE = 1;
+	private String _title;
+	private int _priceCode;
+	
+	public Movie(String title, int priceCode) {
+		_title = title;
+		_priceCode = priceCode;
+	}
+	
+	public int getPriceCode() {
+		return _priceCode;
+	}
+	
+	public void setPriceCode(int arg) {
+		_priceCode = arg;
+	}
+	
+	public String getTitle() {
+		return _title;
+	}
+}
