@@ -24,6 +24,7 @@ public class Price {
 		return basePrice - discount + shipping;
 	}
 	
+	
 	/*
 	// as-is
 	public double price() {
