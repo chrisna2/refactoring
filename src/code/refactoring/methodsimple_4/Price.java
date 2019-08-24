@@ -9,6 +9,34 @@ public class Price {
 		this._quantity = quantity;
 		this._itemPrice = itemPrice;
 	}
+	
+	//to-be
+	public double getPrice() {
+		int basePrice = _quantity * _itemPrice;
+		return discountedPice(basePrice);
+	}
+
+	private double discountedPice(int basePrice) {
+		if (getDiscoutLvl() == 2) {
+			return basePrice * 0.1;
+		}
+		else {
+			return basePrice * 0.05;
+		}
+	}
+	
+	private int getDiscoutLvl() {
+		if (_quantity > 100) {
+			return 2;
+		}
+		else {
+			return 1;
+		}
+		
+	}
+	
+	/*
+	//as-is
 	public double getPrice() {
 		int basePrice = _quantity * _itemPrice;
 		int discountLevel;
@@ -25,5 +53,5 @@ public class Price {
 		if (discountLevel == 2) return basePrice * 0.1;
 		else return basePrice * 0.05;
 	}
-
+	*/
 }
