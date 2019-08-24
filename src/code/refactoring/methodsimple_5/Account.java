@@ -6,6 +6,7 @@ import java.util.Vector;
 
 public class Account {
 	
+	//자바에서는 동적인 길이로 여러 데이터형을 저장하기 위해 Vector 클래스를 제공한다. Vector 클래스는 가변 길이의 배열이라고 할 수 있다.
 	Vector _entries = new Vector();
 	
 	//to-be
@@ -15,6 +16,7 @@ public class Account {
 		
 		entriesAddElement();
 		
+		//Enumeration 인터페이스는 객체들의 집합(Vector)에서 각각의 객체들을 한순간에 하나씩 처리할 수 있는 메소드를 제공하는 켈렉션이다.
 		Enumeration e = _entries.elements();
 
 		while (e.hasMoreElements()) {
