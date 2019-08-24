@@ -2,6 +2,7 @@ package code.refactoring.conditionsimple_2;
 
 public class ControlFlag {
 	
+	/*생략합니다. 집에서 해볼것*/
 	public ControlFlag() {}
 	
 	public void checkSecurity(String[] people) {
