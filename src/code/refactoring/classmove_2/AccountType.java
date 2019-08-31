@@ -1,6 +1,7 @@
 package code.refactoring.classmove_2;
 
 public class AccountType {
+	
 	private double _interestRate = 4.53;
 
 	public double get_interestRate() {
