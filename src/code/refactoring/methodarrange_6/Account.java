@@ -1,29 +1,33 @@
 package code.refactoring.methodarrange_6;
 
+/**
+ * 
+ * @author kosta
+ *
+ */
 public class Account {
 	
 	public Account() {
 
 	}
-	//to-be
+	
+	//TO-BE
 	public int gamma (int inputVal, int quantity, int yearToDate) {
 		
-		int importantValue1 = inputVal * quantity;
-		int importantValue2 = (inputVal * yearToDate) + 100;
+		Gamma gamma = new Gamma(inputVal, quantity, yearToDate, this);
 		
-		if ((yearToDate - importantValue1) > 100) {
-			importantValue2 -= 20;
-		}
-
-		int importantValue3 = importantValue2 * 7;
-		
-
-		return importantValue3 -2 * importantValue1;
+		return gamma.compute();
 		
 	}
 
-	/*
+	public int delta() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
 	//as-is
+	/*
 	public int gamma (int inputVal, int quantity, int yearToDate) {
 		
 		int importantValue1 = (inputVal * quantity) + delta();
@@ -41,11 +45,9 @@ public class Account {
 		
 	}
 	
-	//필요없는 메서드는 삭제
 	private int delta() {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-	 */
+	}*/
 }
 
