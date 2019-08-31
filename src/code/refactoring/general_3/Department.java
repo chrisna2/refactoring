@@ -3,16 +3,16 @@ package code.refactoring.general_3;
 import java.util.Enumeration;
 import java.util.Vector;
 
-public class Department {
+public class Department extends Party {
 	
-	private String _name;
 	private Vector _staff = new Vector();
 
 	public Department (String name) {
-		_name = name;
+		super(name);
 	}
 	
-	public int getTotalAnnualCost() {
+	@Override
+	public int getAnnualCost() {
 		Enumeration e = getStaff();
 		int result = 0;
 		while(e.hasMoreElements()) {
@@ -32,9 +32,6 @@ public class Department {
 	}
 	public void addStaff(Employee arg) {
 		_staff.addElement(arg);
-	}
-	public String getName() {
-		return _name;
 	}
 
 }
