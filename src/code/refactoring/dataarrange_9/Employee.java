@@ -1,6 +1,10 @@
 package code.refactoring.dataarrange_9;
 
-
+/**
+ * ∞¥√º ±∏¡∂»≠ 6 : ∆—≈‰∏Æ ∆–≈œ
+ * @author kosta
+ *
+ */
 public class Employee {
 
 	private EmployeeType _type;
