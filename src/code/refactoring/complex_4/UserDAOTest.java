@@ -7,6 +7,10 @@ import java.sql.Connection;
 import org.junit.Before;
 import org.junit.Test;
 
+/*
+ * 일반화 처리 5 : 템플릿 메서드 생선
+ * @author kosta
+ */
 public class UserDAOTest {
 	
 	private UserDAO userDAO;

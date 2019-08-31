@@ -1,5 +1,9 @@
 package code.refactoring.complex_4;
 
+/*
+ * 일반화 처리 5 : 템플릿 메서드 생선
+ * @author kosta
+ */
 public class UserVO {
 	
 	private String userId;
