@@ -1,7 +1,5 @@
 package code.refactoring.dataarrange_2;
 
-import static org.junit.Assert.*;
-
 import java.util.Iterator;
 import java.util.Vector;
 
