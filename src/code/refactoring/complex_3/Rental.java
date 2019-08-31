@@ -1,6 +1,7 @@
 package code.refactoring.complex_3;
 
 public class Rental {
+	
 	private Movie _movie;
 	private int _daysRented;
 	
@@ -16,4 +17,15 @@ public class Rental {
 	public Movie getMovie() {
 		return _movie;
 	}
+	
+	//#1
+	public double getRantalCharge() {
+		return _movie.getRantalCharge(getDaysRented());
+	}
+
+	//#2
+	public int getFrequentRentalPoint() {
+		return _movie.getFrequentRentalPoint(getDaysRented());
+	}
+
 }
