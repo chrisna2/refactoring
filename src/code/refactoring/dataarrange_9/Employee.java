@@ -1,14 +1,21 @@
 package code.refactoring.dataarrange_9;
 
+
 public class Employee {
 
-	private int _type;
-    static final int ENGINEER = 0;
-    static final int SALESMAN = 1;
-    static final int MANAGER = 2;
-    int  _monthlySalary=1, _commission=1,  _bonus=1;
-
+	private EmployeeType _type;
+	
+	//클라이언트는 호출만 하라
+    public Employee(int type) {
+    	_type = EmployeeType.setType(type);
+    }
     
+    int payAmount() {
+    	return _type.payAmount();
+
+    }
+    
+    /*as-is
     public Employee(int type) {
     	_type = type;
     }
@@ -24,5 +31,5 @@ public class Employee {
             default:
                throw new RuntimeException("Incorrect Employee");
         }
-    }
+    }*/
 }
