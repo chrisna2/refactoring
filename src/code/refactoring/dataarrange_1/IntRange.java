@@ -16,4 +16,8 @@ public class IntRange {
     void grow(int factor) {
     	_high = _high * factor;
     }
+
+	public int getHigh() {
+		return _high;
+	}
 }
