@@ -2,13 +2,12 @@ package code.refactoring.classmove_3;
 
 /**
  * 객체구조화 3 : 클래스 추출
- * @author kosta
- *
+ * 만약 상속으로 처리할 경우 공통으로 묶는 것을 기본으로 한다. 지금 과 같은 케이스는 조금 결이 다른 경우..
  */
 public class Person {
 	
+	//TO-BE 너무 방대해진 클래스를 줄이기 위한 기법
 	private String name;
-	
 	private TelephoneNumber telNumber = new TelephoneNumber();
 	
 	public String getOfficeAreaCode() {
