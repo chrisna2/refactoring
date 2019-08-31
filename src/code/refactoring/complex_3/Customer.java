@@ -19,7 +19,7 @@ public class Customer {
 	public String getName() {
 		return _name;
 	}
-	
+	//몰빵된 기능들
 	public String statement() {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
@@ -28,6 +28,7 @@ public class Customer {
 		
 		while (rentals.hasMoreElements()) {
 			double thisAmount = 0;
+			
 			Rental each = (Rental)rentals.nextElement();
 			
 			// 비디오 종류별 대여료 계산
@@ -46,6 +47,7 @@ public class Customer {
 					thisAmount += (each.getDaysRented()-3) * 1.5;
 				break;
 			}
+			
 			// 적립 포인트를 1 포인트 증가
 			frequentRenterPoints ++;
 			//최신물을 이틀이상 대여하면 보너스포인트 지급

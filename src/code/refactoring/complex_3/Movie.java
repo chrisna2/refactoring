@@ -1,5 +1,6 @@
 package code.refactoring.complex_3;
 
+//자식 클래스 장르 추가
 public class Movie {
 	public static final int CHILDERNS = 2;
 	public static final int REQULAR = 0;
