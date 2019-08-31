@@ -6,8 +6,6 @@ public class Department {
 	private String departmentCode = "111";
 
     public Department () {
-        //_manager = manager;
-    	//departmentCode = code;
     }
 
     public String getManager() {
