@@ -13,15 +13,14 @@ import java.sql.SQLException;
 public class UserDAO {
 	
 	/*
-	 * 사용자변경 부분 					| 공통되는 패턴들						
-	 * -> 추상메서드					  -> 공통 함수
+	 * 사용자변경 부분 							| 공통되는 패턴들						
+	 * -> 추상메서드					 		 -> 공통 함수
 	 * 
-	 * 1) sql 셋팅 -> 변경되는 부분		|
-	 * 								| 2) DB Connect
+	 * 1) sql 셋팅 -> 변경되는 부분				|
+	 * 											| 2) DB Connect
 	 * 3) 파라미터 셋팅 -> 변경되는 부분		|
-	 * 								| 4) SQl 실행
-	 * 								| 5) 커넥션 클로즈
-	 * 								|
+	 * 											| 4) SQl 실행
+	 * 											| 5) 커넥션 클로즈
 	 */
 	
 	public Connection getConnection() {
